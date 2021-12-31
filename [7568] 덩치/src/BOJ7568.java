@@ -14,7 +14,7 @@ public class BOJ7568 {
 			int [] arr = new int[3];
 			arr[0] = scanner.nextInt();
 			arr[1] = scanner.nextInt();
-			arr[2] = 0;
+			arr[2] = 1;
 			lst.add(arr);
 		}
 
@@ -32,7 +32,8 @@ public class BOJ7568 {
 		}
 
 		for (int i = 0; i < lst.size(); i++) {
-			System.out.println(lst.get(i));
+			int[] tmp = lst.get(i);
+			System.out.print(tmp[2] + " ");
 		}
 	}
 }
