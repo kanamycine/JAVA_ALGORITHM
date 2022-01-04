@@ -30,6 +30,5 @@ public class BOJ2858 {
 		}
 		System.out.print(results.get(results.size()-2) + " ");
 		System.out.println(results.get(results.size()-1));
-
 	}
 }

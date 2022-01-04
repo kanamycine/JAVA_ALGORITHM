@@ -13,6 +13,6 @@ public class BOJ1436 {
 			}
 			i++;
 		}
-		System.out.println(i -1);
+		System.out.println(i - 1);
 	}
 }

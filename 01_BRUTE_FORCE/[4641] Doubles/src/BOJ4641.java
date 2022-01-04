@@ -20,7 +20,6 @@ public class BOJ4641 {
 			}
 
 			intLst.remove(intLst.size()-1);
-			Collections.sort(intLst);
 			for (int i = 0; i < intLst.size(); i++) {
 				if(intLst.contains(intLst.get(i) * 2)){
 					res += 1;
