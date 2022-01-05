@@ -1,4 +1,3 @@
-import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 public class BOJ15649 {
