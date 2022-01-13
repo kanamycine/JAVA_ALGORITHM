@@ -31,27 +31,18 @@ public class BOJ3758 {
 				Question tmp = new Question(sc.nextInt(), sc.nextInt(), sc.nextInt());
 				allQ.add(tmp);
 			}
-			// 마지막 제출 순서 계산 로직
-			int tmpChekSubmitSequence = 1;
-			for (int j = allQ.size()-1; j >= 0; j--){
-				if(teamLst.get((allQ.get(j).id)-1).lastSubmit == 0){
-					teamLst.get((allQ.get(j).id)-1).lastSubmit = tmpChekSubmitSequence;
-				}
-				else{
-					continue;
-				}
-				tmpChekSubmitSequence += 1;
-			}
 
 			// for (int j = 0; j < teamLst.size(); j++) {
 			// 	System.out.println("lastSubmit " + teamLst.get(j).lastSubmit);
 			// }
 
-			Collections.sort(allQ, compare);
-
-			// 제출 횟수 카운팅 후 팀 객체에 업데이트
+			// 제출 횟수 카운팅, 팀 객체 업데이트, 최대값 뽑기.
 			for (int j = 0; j < allQ.size() ; j++) {
 				teamLst.get(allQ.get(j).id -1).countSubmit += 1;
+				if(score_board[allQ.get(j).id][allQ.get(j).problemNumber] < allQ.get(j).score) {
+					score_board[allQ.get(j).id][allQ.get(j).problemNumber] = allQ.get(j).score;
+				}
+				teamLst.get(allQ.get(j).id-1).lastSubmit += 1;
 			}
 
 			// for (int j = 0; j < teamLst.size(); j++) {
@@ -63,18 +54,6 @@ public class BOJ3758 {
 			// 	System.out.print(allQ.get(j).problemNumber + " ");
 			// 	System.out.println(allQ.get(j).score);
 			// }
-
-			//가장 높은 수를 뽑아낸다.
-			for (int j = 1; j < tn + 1; j++) {
-				for (int k = 1; k < pn + 1; k++) {
-					for (int l = 0; l < allQ.size(); l++) {
-						if (j == allQ.get(l).id && k == allQ.get(l).problemNumber) {
-							score_board[j][k] = allQ.get(l).score;
-							break;
-						}
-					}
-				}
-			}
 
 			// for (int k = 1; k < tn + 1; k++) {
 			// 	for (int l = 1; l < pn + 1; l++) {
@@ -139,7 +118,7 @@ public class BOJ3758 {
 				if (o1.countSubmit > o2.countSubmit) {
 					return 1;
 				} else if (o1.countSubmit == o2.countSubmit) {
-					if(o1.lastSubmit < o2.lastSubmit)
+					if(o1.lastSubmit > o2.lastSubmit)
 						return 1;
 				}
 			}
