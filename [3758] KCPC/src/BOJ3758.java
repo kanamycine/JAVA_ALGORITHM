@@ -64,6 +64,7 @@ public class BOJ3758 {
 			// 	System.out.println(allQ.get(j).score);
 			// }
 
+			//가장 높은 수를 뽑아낸다.
 			for (int j = 1; j < tn + 1; j++) {
 				for (int k = 1; k < pn + 1; k++) {
 					for (int l = 0; l < allQ.size(); l++) {
