@@ -22,7 +22,7 @@ public class BOJ3758 {
 			List<Team> teamLst = new ArrayList<>();
 
 			for (int j = 0; j < tn; j++) {
-				teamLst.add(new Team(j+1));
+				teamLst.add(new Team(j + 1));
 			}
 
 			int[][] score_board = new int[tn + 1][pn + 1];
@@ -32,82 +32,43 @@ public class BOJ3758 {
 				allQ.add(tmp);
 			}
 
-			// for (int j = 0; j < teamLst.size(); j++) {
-			// 	System.out.println("lastSubmit " + teamLst.get(j).lastSubmit);
-			// }
-
 			// 제출 횟수 카운팅, 팀 객체 업데이트, 최대값 뽑기.
-			for (int j = 0; j < allQ.size() ; j++) {
-				teamLst.get(allQ.get(j).id -1).countSubmit += 1;
-				if(score_board[allQ.get(j).id][allQ.get(j).problemNumber] < allQ.get(j).score) {
+			for (int j = 0; j < allQ.size(); j++) {
+				teamLst.get(allQ.get(j).id - 1).countSubmit += 1;
+				if (score_board[allQ.get(j).id][allQ.get(j).problemNumber] < allQ.get(j).score) {
 					score_board[allQ.get(j).id][allQ.get(j).problemNumber] = allQ.get(j).score;
 				}
-				teamLst.get(allQ.get(j).id-1).lastSubmit += 1;
+				teamLst.get(allQ.get(j).id - 1).lastSubmit = j;
 			}
-
-			// for (int j = 0; j < teamLst.size(); j++) {
-			// 	System.out.println("team Count Submit : " + teamLst.get(j).countSubmit);
-			// }
-
-			// for (int j = 0; j < allQ.size(); j++) {
-			// 	System.out.print(allQ.get(j).id + " ");
-			// 	System.out.print(allQ.get(j).problemNumber + " ");
-			// 	System.out.println(allQ.get(j).score);
-			// }
-
-			// for (int k = 1; k < tn + 1; k++) {
-			// 	for (int l = 1; l < pn + 1; l++) {
-			// 		System.out.println("tn : " + k + " pn : " + l + " score " + score_board[k][l]);
-			// 	}
-			// }
 
 			//팀 스코어 정산 후 팀 객체에 업데이트
-			for (int j = 1; j < tn+1; j++) {
-				for (int k = 1; k < pn+1; k++) {
-					teamLst.get(j-1).score += score_board[j][k];
+			for (int j = 1; j < tn + 1; j++) {
+				for (int k = 1; k < pn + 1; k++) {
+					teamLst.get(j - 1).score += score_board[j][k];
 				}
 			}
-
-			// for (int j = 0; j < teamLst.size(); j++) {
-			// 	System.out.println(j+1 + " team score" + teamLst.get(j).score);
-			// }
 
 			Collections.sort(teamLst, compare2);
-
-			// for (int j = 0; j < teamLst.size(); j++) {
-			// 	System.out.println(teamLst.get(j).id);
-			// }
-
-
-			int rescnt = 1;
+			int idx = 0;
+			int score = 0;
 			for (int j = 0; j < teamLst.size(); j++) {
-				if(id == teamLst.get(j).id){
-					System.out.println(rescnt);
+				if(teamLst.get(j).id == id){
+					idx = j;
+					score = teamLst.get(j).score;
 					break;
 				}
-				else{
-					rescnt += 1;
+			}
+
+			int res = 1;
+			for (int j = 0; j < idx; j++) {
+				if(teamLst.get(j).score >= score){
+					res+=1;
 				}
 			}
+			// System.out.println(idx);
+			System.out.println(res);
 		}
 	}
-
-	public static Comparator<Question> compare = new Comparator<Question>() {
-		@Override
-		public int compare(Question o1, Question o2) {
-			if (o1.id > o2.id) {
-				return 1;
-			} else if (o1.id == o2.id) {
-				if (o1.problemNumber > o2.problemNumber) {
-					return 1;
-				} else if (o1.problemNumber == o2.problemNumber) {
-					if(o1.score < o2.score)
-						return 1;
-				}
-			}
-			return -1;
-		}
-	};
 
 	public static Comparator<Team> compare2 = new Comparator<Team>() {
 		@Override
@@ -118,7 +79,7 @@ public class BOJ3758 {
 				if (o1.countSubmit > o2.countSubmit) {
 					return 1;
 				} else if (o1.countSubmit == o2.countSubmit) {
-					if(o1.lastSubmit > o2.lastSubmit)
+					if (o1.lastSubmit > o2.lastSubmit)
 						return 1;
 				}
 			}
@@ -139,18 +100,21 @@ class Question {
 	}
 }
 
-class Team{
+class Team {
 	int id;
 	int countSubmit;
 	int lastSubmit;
-	int rank;
+	// int rank;
 	int score;
 
-	public Team(int id){
+	public Team(int id) {
 		this.id = id;
 		countSubmit = 0;
 		lastSubmit = 0;
-		rank = 0;
+		// rank = 0;
 		score = 0;
 	}
 }
+
+
+
