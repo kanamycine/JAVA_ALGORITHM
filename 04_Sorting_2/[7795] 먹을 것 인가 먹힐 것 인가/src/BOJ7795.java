@@ -33,9 +33,7 @@ public class BOJ7795 {
 					}
 				}
 			}
-
 			System.out.println(res);
-
 		}
 	}
 }
