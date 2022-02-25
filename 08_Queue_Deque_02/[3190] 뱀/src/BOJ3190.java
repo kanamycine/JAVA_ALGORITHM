@@ -87,11 +87,8 @@ public class BOJ3190 {
 				Location tail = snake.peekLast();
 				arr[tail.x][tail.y] = 0;
 				snake.pollLast();
-
 			}
 		}
-
-
 		System.out.println(time);
 	}
 }
