@@ -1,21 +1,25 @@
 import java.util.Scanner;
 
 public class _1_N {
-	static int n;
-	static int sum;
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		n = sc.nextInt();
-		sum = 0;
-		recursive(1);
-		System.out.println(sum);
-	}
-
-	public static void recursive(int i){
-		if (i == n + 1){
-			return;
+		int n = sc.nextInt();
+		for (int i = 1; i <= n; i++) {
+			for (int j = i; j <= n-1; j++) {
+				System.out.print(" ");
+			}
+			for (int j = 0; j <= i * 2-1; j++) {
+				if (j % 2 == 1)
+					System.out.print("*");
+				else
+					System.out.print(" ");
+			}
+			System.out.println();
 		}
-		sum += i;
-		recursive(i+1);
 	}
 }
+
+//    *
+//   * *
+//  * * *
+// * * * *
