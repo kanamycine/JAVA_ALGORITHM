@@ -4,7 +4,6 @@ public class BOJ9095 {
 	private static int [] result;
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		StringBuilder sb = new StringBuilder();
 		int t = sc.nextInt();
 		result = new int [t];
 		for (int i = 0; i < t; i++) {
