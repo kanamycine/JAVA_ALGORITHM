@@ -11,7 +11,7 @@ public class Main {
 		for (int i = 0; i < n; i++) {
 			arr[i] = sc.nextInt();
 		}
-
+		//깊은복사
 		int [] tmp = arr.clone();
 
 		ArrayList lst = new ArrayList();
