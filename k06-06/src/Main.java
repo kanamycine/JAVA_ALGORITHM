@@ -12,6 +12,7 @@ public class Main {
 			arr[i] = sc.nextInt();
 		}
 		//깊은복사
+
 		int [] tmp = arr.clone();
 
 		ArrayList lst = new ArrayList();
