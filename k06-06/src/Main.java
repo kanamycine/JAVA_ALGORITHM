@@ -13,6 +13,7 @@ public class Main {
 		}
 		//깊은복사
 
+
 		int [] tmp = arr.clone();
 
 		ArrayList lst = new ArrayList();
