@@ -26,15 +26,13 @@ public class k0302 {
 		List<Integer> lst = new ArrayList<>();
 		int p1 = 0;
 		int p2 = 0;
-		while(p1<a.length && p2<b.length){
-			if(a[p1] == b[p2]){
+		while (p1 < a.length && p2 < b.length) {
+			if (a[p1] == b[p2]) {
 				lst.add(a[p1]);
 				p1++;
-			}
-			else if (a[p1] < b[p2]){
+			} else if (a[p1] < b[p2]) {
 				p1++;
-			}
-			else
+			} else
 				p2++;
 		}
 

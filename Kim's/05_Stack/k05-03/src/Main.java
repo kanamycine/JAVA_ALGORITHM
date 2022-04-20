@@ -8,16 +8,16 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int n = Integer.parseInt(sc.nextLine());
 
-		Stack [] arr = new Stack[n];
+		Stack[] arr = new Stack[n];
 		for (int i = 0; i < n; i++) {
 			arr[i] = new Stack<Integer>();
 		}
 
 		for (int i = 0; i < n; i++) {
 			String s = sc.nextLine();
-			String [] str =s.split(" ");
+			String[] str = s.split(" ");
 			for (int j = 0; j < n; j++) {
-				if(!(str[j].equals("0"))) {
+				if (!(str[j].equals("0"))) {
 					arr[j].push(str[j]);
 				}
 			}
@@ -31,17 +31,15 @@ public class Main {
 		Stack<Object> answerStack = new Stack<>();
 		int m = Integer.parseInt(sc.nextLine());
 		String s = sc.nextLine();
-		int [] ints = Arrays.stream(s.split(" ")).mapToInt(Integer::parseInt).toArray();
+		int[] ints = Arrays.stream(s.split(" ")).mapToInt(Integer::parseInt).toArray();
 		for (int i = 0; i < m; i++) {
-			if(arr[ints[i] - 1].isEmpty()){
+			if (arr[ints[i] - 1].isEmpty()) {
 				continue;
-			}
-			else if (!(answerStack.isEmpty()) && arr[ints[i] - 1].peek().equals(answerStack.peek())){
-				answer +=2;
+			} else if (!(answerStack.isEmpty()) && arr[ints[i] - 1].peek().equals(answerStack.peek())) {
+				answer += 2;
 				arr[ints[i] - 1].pop();
 				answerStack.pop();
-			}
-			else {
+			} else {
 				answerStack.push(arr[ints[i] - 1].pop());
 			}
 

@@ -9,7 +9,7 @@ public class k0202 {
 		int n = Integer.parseInt(sc.nextLine());
 
 		String input = sc.nextLine();
-		String [] inputa = input.split(" ");
+		String[] inputa = input.split(" ");
 		List<Integer> lst = new ArrayList<>();
 		int min = 0;
 		for (int i = 0; i < inputa.length; i++) {

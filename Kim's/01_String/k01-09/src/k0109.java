@@ -13,7 +13,7 @@ public class k0109 {
 			lst.add(input.charAt(i) - '0');
 		}
 
-		while(lst.get(0) == 0){
+		while (lst.get(0) == 0) {
 			lst.remove(0);
 		}
 

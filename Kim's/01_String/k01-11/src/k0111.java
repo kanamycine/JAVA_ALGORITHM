@@ -11,24 +11,22 @@ import java.util.Set;
 public class k0111 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		String input = sc.nextLine()+ " ";
+		String input = sc.nextLine() + " ";
 		StringBuilder sb = new StringBuilder();
-		int cnt = 1 ;
+		int cnt = 1;
 
 		for (int i = 0; i < input.length() - 1; i++) {
-			if(input.charAt(i)==input.charAt(i+1)) {
+			if (input.charAt(i) == input.charAt(i + 1)) {
 				cnt++;
-			}
-			else {
+			} else {
 				sb.append(input.charAt(i));
-				if(cnt > 1){
+				if (cnt > 1) {
 					sb.append(cnt);
 					cnt = 1;
 				}
 			}
 		}
 		System.out.println(sb);
-
 
 	}
 }

@@ -8,10 +8,9 @@ public class k0108 {
 		input = input.replaceAll("[^a-zA-Z0-9]", "");
 
 		StringBuilder sb = new StringBuilder(input);
-		if(input.equalsIgnoreCase(sb.reverse().toString())){
+		if (input.equalsIgnoreCase(sb.reverse().toString())) {
 			System.out.println("YES");
-		}
-		else
+		} else
 			System.out.println("NO");
 	}
 }

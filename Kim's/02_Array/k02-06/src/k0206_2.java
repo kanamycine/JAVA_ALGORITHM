@@ -20,7 +20,7 @@ public class k0206_2 {
 				res = res * 10 + t;
 				tmp = tmp / 10;
 			}
-			if(prime(res)){
+			if (prime(res)) {
 				ans.add(res);
 			}
 		}
@@ -31,7 +31,8 @@ public class k0206_2 {
 	}
 
 	static boolean prime(int tmp) {
-		if (tmp == 1) return false;
+		if (tmp == 1)
+			return false;
 		for (int i = 2; i * i <= tmp; i++) {
 			if (tmp % i == 0) {
 				return false;

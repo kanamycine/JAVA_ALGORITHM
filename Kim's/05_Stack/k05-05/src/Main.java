@@ -6,18 +6,17 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 
 		String s = sc.nextLine();
-		String [] str = s.split("");
+		String[] str = s.split("");
 		Stack<String> stk = new Stack<>();
 		int res = 0;
 		for (int i = 0; i < str.length; i++) {
-			if( str[i].equals("("))
+			if (str[i].equals("("))
 				stk.push(str[i]);
-			else{
+			else {
 				stk.pop();
-				if (str[i - 1].equals("(")){
+				if (str[i - 1].equals("(")) {
 					res += stk.size();
-				}
-				else if (str[i -1].equals(")")){
+				} else if (str[i - 1].equals(")")) {
 					res += 1;
 				}
 			}

@@ -5,7 +5,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 
 		int n = sc.nextInt();
-		int [] arr = new int [n];
+		int[] arr = new int[n];
 
 		for (int i = 0; i < n; i++) {
 			arr[i] = sc.nextInt();
@@ -15,11 +15,11 @@ public class Main {
 			int target = arr[i];
 			int j = i - 1;
 
-			while(j >= 0 && target < arr[j]){
-				arr[j+1] = arr[j];
+			while (j >= 0 && target < arr[j]) {
+				arr[j + 1] = arr[j];
 				j--;
 			}
-			arr[j+1] = target;
+			arr[j + 1] = target;
 		}
 		for (int i : arr) {
 			System.out.print(i + " ");

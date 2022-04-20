@@ -6,11 +6,11 @@ public class k0303 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String first = br.readLine();
-		String [] tmp = first.split(" ");
+		String[] tmp = first.split(" ");
 
 		int n = Integer.parseInt(tmp[0]);
 		int m = Integer.parseInt(tmp[1]);
-		int [] arr = new int[n+1];
+		int[] arr = new int[n + 1];
 
 		first = br.readLine();
 		tmp = first.split(" ");
@@ -25,12 +25,12 @@ public class k0303 {
 			max += arr[i];
 		}
 		sum = max;
-		while(k != arr.length - 1){
-				sum = sum - arr[k-m] + arr[k];
-				if(sum > max){
-					max = sum;
-				}
-				k++;
+		while (k != arr.length - 1) {
+			sum = sum - arr[k - m] + arr[k];
+			if (sum > max) {
+				max = sum;
+			}
+			k++;
 		}
 		System.out.println(max);
 	}

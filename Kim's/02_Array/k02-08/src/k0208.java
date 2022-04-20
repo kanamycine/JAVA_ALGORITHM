@@ -11,13 +11,13 @@ public class k0208 {
 		}
 		int x = 100;
 		int rank = 1;
-		int tmp =0;
-		int [] res = new int [n];
-		while(x >= 0){
+		int tmp = 0;
+		int[] res = new int[n];
+		while (x >= 0) {
 			for (int i = 0; i < n; i++) {
-				if (arr[i] == x){
+				if (arr[i] == x) {
 					res[i] = rank;
-					tmp ++;
+					tmp++;
 				}
 			}
 			rank += tmp;

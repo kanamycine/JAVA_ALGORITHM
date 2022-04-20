@@ -17,12 +17,12 @@ public class k0401 {
 		Scanner sc = new Scanner(System.in);
 		int n = Integer.parseInt(sc.nextLine());
 		String s = sc.nextLine();
-		String [] strings = s.split("");
+		String[] strings = s.split("");
 		for (int i = 0; i < strings.length; i++) {
-			if(map.containsKey(strings[i]))
+			if (map.containsKey(strings[i]))
 				map.put(strings[i], map.get(strings[i]) + 1);
 		}
-		List<Map.Entry<String, Integer>> entryList= new LinkedList<>(map.entrySet());
+		List<Map.Entry<String, Integer>> entryList = new LinkedList<>(map.entrySet());
 		entryList.sort(Map.Entry.comparingByValue());
 		System.out.println(entryList.get(4).getKey());
 	}

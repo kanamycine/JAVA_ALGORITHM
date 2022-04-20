@@ -12,16 +12,15 @@ public class Main {
 		List<String> lst = Arrays.asList(t.split(""));
 		String[] string = s.split("");
 		List<String> answer = new ArrayList<>();
-		for (int i = 0; i <s.length() ; i++) {
-			if (lst.contains(string[i])){
+		for (int i = 0; i < s.length(); i++) {
+			if (lst.contains(string[i])) {
 				answer.add(string[i]);
 			}
 		}
 
-		if(lst.equals(answer)){
+		if (lst.equals(answer)) {
 			System.out.println("YES");
-		}
-		else
+		} else
 			System.out.println("NO");
 	}
 

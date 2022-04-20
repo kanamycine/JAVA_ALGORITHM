@@ -7,7 +7,7 @@ public class k0211 {
 		Scanner sc = new Scanner(System.in);
 
 		int n = sc.nextInt();
-		int [][] arr = new int[n][5];
+		int[][] arr = new int[n][5];
 
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < 5; j++) {
@@ -15,14 +15,14 @@ public class k0211 {
 			}
 		}
 
-		ArrayList<int [][]> lst = new ArrayList<>();
+		ArrayList<int[][]> lst = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
-			lst.add(new int [n][5]);
+			lst.add(new int[n][5]);
 		}
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < 5; j++) {
 				for (int k = 0; k < n; k++) {
-					if(i!= k && arr[i][j] == arr[k][j]){
+					if (i != k && arr[i][j] == arr[k][j]) {
 						lst.get(i)[k][j] = 1;
 					}
 				}
@@ -34,7 +34,7 @@ public class k0211 {
 			for (int i = 0; i < n; i++) {
 				for (int j = 0; j < 5; j++) {
 					// System.out.print(ints[i][j] + " ");
-					if(ints[i][j] == 1){
+					if (ints[i][j] == 1) {
 						cnt++;
 						break;
 					}

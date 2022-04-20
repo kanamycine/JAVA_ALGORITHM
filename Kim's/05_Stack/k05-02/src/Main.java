@@ -18,7 +18,7 @@ public class Main {
 			} else if (str[i].equals(")"))
 				stk.pop();
 			else {
-				if(stk.isEmpty()){
+				if (stk.isEmpty()) {
 					lst.add(str[i]);
 				}
 			}

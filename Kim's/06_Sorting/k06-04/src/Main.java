@@ -15,14 +15,13 @@ public class Main {
 
 		for (int i = 0; i < m; i++) {
 			int input = sc.nextInt();
-			if(lst.size() >= n){
-				if(lst.contains(input)){
+			if (lst.size() >= n) {
+				if (lst.contains(input)) {
 					lst.remove(input);
 					lst.add(0, input);
 					continue;
-				}
-				else{
-					lst.remove(n-1);
+				} else {
+					lst.remove(n - 1);
 					lst.add(0, input);
 					continue;
 				}

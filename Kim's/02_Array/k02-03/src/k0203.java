@@ -5,8 +5,8 @@ public class k0203 {
 		Scanner sc = new Scanner(System.in);
 
 		int n = sc.nextInt();
-		int [] a = new int [n];
-		int [] b = new int [n];
+		int[] a = new int[n];
+		int[] b = new int[n];
 
 		for (int i = 0; i < n; i++) {
 			a[i] = sc.nextInt();
@@ -16,7 +16,7 @@ public class k0203 {
 			b[i] = sc.nextInt();
 		}
 		for (int i = 0; i < n; i++) {
-			if(a[i] == b[i])
+			if (a[i] == b[i])
 				System.out.println("D");
 			else if (a[i] == 1 && b[i] == 2)
 				System.out.println("B");

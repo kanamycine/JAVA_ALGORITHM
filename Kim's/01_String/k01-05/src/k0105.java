@@ -5,12 +5,12 @@ public class k0105 {
 		Scanner sc = new Scanner(System.in);
 
 		String input = sc.nextLine();
-		char [] s = input.toCharArray();
+		char[] s = input.toCharArray();
 		int lt, rt;
 		lt = 0;
 		rt = s.length - 1;
-		while(lt <= rt){
-			if(!Character.isAlphabetic(s[lt]))
+		while (lt <= rt) {
+			if (!Character.isAlphabetic(s[lt]))
 				lt++;
 			else if (!Character.isAlphabetic(s[rt]))
 				rt--;

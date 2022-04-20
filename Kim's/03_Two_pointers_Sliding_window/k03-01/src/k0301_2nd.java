@@ -15,15 +15,17 @@ public class k0301_2nd {
 			b[i] = scanner.nextInt();
 		}
 		ArrayList<Integer> lst = new ArrayList<>();
-		int p1 = 0, p2 =0;
-		while(p1 < n && p2 < m){
-			if(a[p1] < b[p2])
+		int p1 = 0, p2 = 0;
+		while (p1 < n && p2 < m) {
+			if (a[p1] < b[p2])
 				lst.add(a[p1++]);
 			else
 				lst.add(b[p2++]);
 		}
-		while(p1 < n) lst.add(a[p1++]);
-		while(p2 < m) lst.add(b[p2++]);
+		while (p1 < n)
+			lst.add(a[p1++]);
+		while (p2 < m)
+			lst.add(b[p2++]);
 
 		for (Integer integer : lst) {
 			System.out.print(integer + " ");

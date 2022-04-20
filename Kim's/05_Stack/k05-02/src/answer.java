@@ -14,10 +14,10 @@ public class answer {
 			if (str[i].equals(")")) {
 				while (!(stk.pop().equals("("))) {
 				}
-			}
-			else stk.push(str[i]);
+			} else
+				stk.push(str[i]);
 		}
-		for (int i = 0; i <stk.size(); i++) {
+		for (int i = 0; i < stk.size(); i++) {
 			System.out.print(stk.get(i));
 		}
 	}

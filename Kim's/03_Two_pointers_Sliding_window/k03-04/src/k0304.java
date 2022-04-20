@@ -15,11 +15,12 @@ public class k0304 {
 		int sum = 0;
 		for (int r = 0; r < n; r++) {
 			sum += arr[r];
-			if(sum==m) res+=1;
+			if (sum == m)
+				res += 1;
 			while (sum >= m) {
 				sum -= arr[l++];
-				if(sum == m){
-					res+=1;
+				if (sum == m) {
+					res += 1;
 				}
 			}
 		}

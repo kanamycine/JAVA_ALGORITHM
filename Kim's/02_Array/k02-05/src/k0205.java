@@ -6,13 +6,12 @@ public class k0205 {
 
 		int n = sc.nextInt();
 
-		int [] arr = new int [n+1];
+		int[] arr = new int[n + 1];
 		int cnt = 0;
 		for (int i = 2; i < arr.length; i++) {
-			if(arr[i] == 0) {
+			if (arr[i] == 0) {
 				cnt++;
-			}
-			else if (arr[i] == 1)
+			} else if (arr[i] == 1)
 				continue;
 
 			for (int j = i * 2; j < arr.length; j = j + i) {

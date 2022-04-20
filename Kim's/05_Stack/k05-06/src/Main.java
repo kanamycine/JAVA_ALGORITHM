@@ -13,10 +13,10 @@ public class Main {
 		}
 
 		int cnt = 1;
-		while(stk.size() != 1){
-			while(cnt != m){
+		while (stk.size() != 1) {
+			while (cnt != m) {
 				stk.add(0, stk.pop());
-				cnt +=1;
+				cnt += 1;
 			}
 			stk.pop();
 			cnt = 1;
