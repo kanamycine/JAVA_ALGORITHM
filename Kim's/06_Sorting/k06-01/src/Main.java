@@ -16,7 +16,6 @@ public class Main {
 					min = j;
 				}
 			}
-
 			if (i != min) {
 				int tmp = arr[i];
 				arr[i] = arr[min];
