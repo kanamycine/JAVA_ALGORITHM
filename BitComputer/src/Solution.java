@@ -1,6 +1,7 @@
+
 import java.util.HashMap;
 
-public class Main {
+public class Solution {
 	HashMap<Long, Long> map = new HashMap<>();
 	public long [] solution(long k, long [] room_number){
 		long [] result = new long [room_number.length];
